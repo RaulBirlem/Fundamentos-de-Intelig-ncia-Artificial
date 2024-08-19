@@ -8,7 +8,7 @@ let x41 = 1, x42 = 1, resultado4 = 1
 
 let p1 = -1, p2 = -1
 
-let soma, ajustes, quantidadeAjustesTotais = 0, repeticoes = 0
+let soma, ajustes=0, quantidadeAjustesTotais = 0, repeticoes = 0
 
 do {
     ajustes = 0
@@ -24,7 +24,7 @@ console.log("\nPeso 1 = " + p1);
 console.log("\nPeso 2 = " + p2);
 console.log("\nForam necessarios "+ quantidadeAjustesTotais + " ajustes para treinar a rede.");
 
-function somar (x1, x2) {
+function somar(x1, x2) {
     return (x1 * p1) + (x2 * p2)
 }
 
@@ -53,12 +53,11 @@ function ajustar(entrada1, entrada2, resultadoEsperado, resultadoObtido) {
 
 
 
-
 function verificaSeNecessitaAjustar(x1,x2, resultadoEsperado){
     soma = somar(x1,x2)
     resultadoObtido = transferencia(soma)
-    if(y != resultadoEsperado){
-        verificaSeNecessitaAjustar(x1,x2, resultadoEsperado, resultadoObtido)
+    if(resultadoObtido != resultadoEsperado){
+        ajustar(x1,x2, resultadoEsperado, resultadoObtido)
         ajustes++
         quantidadeAjustesTotais++
     }
