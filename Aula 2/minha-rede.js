@@ -12,47 +12,10 @@ let soma, ajustes, quantidadeAjustesTotais = 0, repeticoes = 0
 
 do {
     ajustes = 0
-    soma = somar(x11, x12)
-    resultadoRecebido = transferencia(soma)
-
-    if(resultadoRecebido != resultado1) {
-//resultado1 = resultado esperado
-        ajustar(x11, x12, resultado1, resultadoRecebido)
-        ajustes++
-        quantidadeAjustesTotais++
-    }
-    
-
-    soma = somar(x21, x22)
-    resultadoRecebido = transferencia(soma)
-
-    if(resultadoRecebido != resultado2) {
-
-        ajustar(x11, x12, resultado2, resultadoRecebido)
-        ajustes++
-        quantidadeAjustesTotais++
-    }
-
-    soma = somar(x31, x32)
-    resultadoRecebido = transferencia(soma)
-
-    if(resultadoRecebido != resultado3) {
-
-        ajustar(x31, x32, resultado3, resultadoRecebido)
-        ajustes++
-        quantidadeAjustesTotais++
-    }
-
-    soma = somar(x41, x42)
-    resultadoRecebido = transferencia(soma)
-
-    if(resultadoRecebido != resultado4) {
-
-        ajustar(x41, x42, resultado4, resultadoRecebido)
-        ajustes++
-        quantidadeAjustesTotais++
-    }
-
+    verificaSeNecessitaAjustar(x11,x12,resultado1)
+    verificaSeNecessitaAjustar(x21,x22,resultado2)
+    verificaSeNecessitaAjustar(x31,x32,resultado3)
+    verificaSeNecessitaAjustar(x41,x42,resultado4)
 
 } while (ajustes != 0);
 
