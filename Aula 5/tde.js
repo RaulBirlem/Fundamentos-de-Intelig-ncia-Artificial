@@ -77,11 +77,35 @@ const perguntas = [
                 }
             }
         }
+    },
+    // Adicionando novas perguntas
+    {
+        pergunta: "É um personagem de videogame?",
+        subElemento: {
+            sim: {
+                pergunta: "Ele é da Nintendo?",
+                subElemento: {
+                    sim: "Mario",
+                    nao: "Sonic"
+                }
+            },
+            nao: {
+                pergunta: "Ele é um vilão?",
+                subElemento: {
+                    sim: "Darth Vader",
+                    nao: "Outros"
+                }
+            }
+        }
     }
 ];
 
 // Lista de respostas possíveis
-const arrayDeRespostasPossiveis = ["Neymar", "Ayrton Senna", "Gisele Bündchen", "Margot Robbie", "Goku", "Naruto", "Cachorro", "Vaca", "Dragon Ball", "Outros", "Superman", "Indiana Jones", "Carro"];
+const arrayDeRespostasPossiveis = [
+    "Neymar", "Ayrton Senna", "Gisele Bündchen", "Margot Robbie",
+    "Goku", "Naruto", "Cachorro", "Vaca", "Dragon Ball", "Outros",
+    "Superman", "Indiana Jones", "Carro", "Mario", "Sonic", "Darth Vader"
+];
 
 // Informa ao usuário para ele pensar em uma das opções válidas
 console.log("Pense em uma das opções abaixo para eu tentar adivinhar:");
@@ -104,17 +128,9 @@ function fazPergunta(pergunta) {
 
 async function processarPergunta(perguntaAtual) {
     const resposta = await fazPergunta(`${perguntaAtual.pergunta} (1 para SIM, 2 para NÃO): `);
-    
-    if (resposta === '1') {
-        const proximaPergunta = perguntaAtual.subElemento.sim;
-        if (typeof proximaPergunta === 'string') {
-            console.log(`Resposta: ${proximaPergunta}`);
-            rl.close();
-        } else {
-            await processarPergunta(proximaPergunta);
-        }
-    } else if (resposta === '2') {
-        const proximaPergunta = perguntaAtual.subElemento.nao;
+
+    if (resposta === '1' || resposta === '2') {
+        const proximaPergunta = perguntaAtual.subElemento[resposta === '1' ? 'sim' : 'nao'];
         if (typeof proximaPergunta === 'string') {
             console.log(`Resposta: ${proximaPergunta}`);
             rl.close();
