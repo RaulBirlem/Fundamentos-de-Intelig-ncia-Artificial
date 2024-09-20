@@ -1,6 +1,5 @@
 const readline = require('readline');
 
-// Estrutura de dados das perguntas e respostas
 const perguntas = [
     {
         pergunta: "É Homem?",
