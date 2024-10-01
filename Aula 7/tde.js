@@ -1,157 +1,157 @@
 let perguntas = [
     {
-        identificador: "verificar-sintomas",
-        pergunta: "Você está sentindo algum sintoma?",
-        respostas: [
+        id: "verificar-sintomas",
+        textoPergunta: "Você está sentindo algum sintoma?",
+        opcoes: [
             {
-                respostaPossivel: "Sim",
-                redireciona: "sintomas-comuns"
+                resposta: "Sim",
+                redirecionaPara: "sintomas-comuns"
             },
             {
-                respostaPossivel: "Não",
-                resposta: "Procure um médico para avaliação."
+                resposta: "Não",
+                mensagem: "Procure um médico para avaliação."
             },
             {
-                respostaPossivel: "Não sei",
-                redireciona: "sabe-descrever-sintomas"
+                resposta: "Não sei",
+                redirecionaPara: "sabe-descrever-sintomas"
             }
         ]
     },
     {
-        identificador: "sabe-descrever-sintomas",
-        pergunta: "Você sabe descrever quais sintomas está sentindo?",
-        respostas: [
+        id: "sabe-descrever-sintomas",
+        textoPergunta: "Você sabe descrever quais sintomas está sentindo?",
+        opcoes: [
             {
-                respostaPossivel: "Sim",
-                redireciona: "sintomas-comuns"
+                resposta: "Sim",
+                redirecionaPara: "sintomas-comuns"
             },
             {
-                respostaPossivel: "Não",
-                resposta: "É importante que você consiga descrever seus sintomas para um profissional."
+                resposta: "Não",
+                mensagem: "É importante que você consiga descrever seus sintomas para um profissional."
             }
         ]
     },
     {
-        identificador: "sintomas-comuns",
-        pergunta: "Quais sintomas você está sentindo?",
-        respostas: [
+        id: "sintomas-comuns",
+        textoPergunta: "Quais sintomas você está sentindo?",
+        opcoes: [
             {
-                respostaPossivel: "Dor de cabeça",
-                redireciona: "verificar-dor-cabeca",
+                resposta: "Dor de cabeça",
+                redirecionaPara: "verificar-dor-cabeca",
                 diagnostico: "Dor de cabeça"
             },
             {
-                respostaPossivel: "Febre",
-                redireciona: "verificar-febre",
+                resposta: "Febre",
+                redirecionaPara: "verificar-febre",
                 diagnostico: "Febre"
             },
             {
-                respostaPossivel: "Tosse",
-                redireciona: "verificar-tosse",
+                resposta: "Tosse",
+                redirecionaPara: "verificar-tosse",
                 diagnostico: "Tosse"
             }
         ]
     },
     {
-        identificador: "verificar-dor-cabeca",
-        pergunta: "A dor de cabeça é intensa?",
-        respostas: [
+        id: "verificar-dor-cabeca",
+        textoPergunta: "A dor de cabeça é intensa?",
+        opcoes: [
             {
-                respostaPossivel: "Sim",
-                redireciona: "sintomas-associados",
+                resposta: "Sim",
+                redirecionaPara: "sintomas-associados",
                 diagnostico: "Dor de cabeça intensa"
             },
             {
-                respostaPossivel: "Não",
-                redireciona: "sintomas-associados"
+                resposta: "Não",
+                redirecionaPara: "sintomas-associados"
             },
             {
-                respostaPossivel: "Não sei",
-                redireciona: "ajuda-profissional"
+                resposta: "Não sei",
+                redirecionaPara: "ajuda-profissional"
             }
         ]
     },
     {
-        identificador: "verificar-febre",
-        pergunta: "Você está medindo a temperatura e está acima de 38°C?",
-        respostas: [
+        id: "verificar-febre",
+        textoPergunta: "Você está medindo a temperatura e está acima de 38°C?",
+        opcoes: [
             {
-                respostaPossivel: "Sim",
-                redireciona: "sintomas-associados",
+                resposta: "Sim",
+                redirecionaPara: "sintomas-associados",
                 diagnostico: "Febre alta"
             },
             {
-                respostaPossivel: "Não",
-                redireciona: "sintomas-associados"
+                resposta: "Não",
+                redirecionaPara: "sintomas-associados"
             },
             {
-                respostaPossivel: "Não sei",
-                redireciona: "ajuda-profissional"
+                resposta: "Não sei",
+                redirecionaPara: "ajuda-profissional"
             }
         ]
     },
     {
-        identificador: "verificar-tosse",
-        pergunta: "A tosse é seca ou produtiva?",
-        respostas: [
+        id: "verificar-tosse",
+        textoPergunta: "A tosse é seca ou produtiva?",
+        opcoes: [
             {
-                respostaPossivel: "Seca",
-                redireciona: "sintomas-associados",
+                resposta: "Seca",
+                redirecionaPara: "sintomas-associados",
                 diagnostico: "Tosse seca"
             },
             {
-                respostaPossivel: "Produtiva",
-                redireciona: "sintomas-associados",
+                resposta: "Produtiva",
+                redirecionaPara: "sintomas-associados",
                 diagnostico: "Tosse produtiva"
             },
             {
-                respostaPossivel: "Não sei",
-                redireciona: "ajuda-profissional"
+                resposta: "Não sei",
+                redirecionaPara: "ajuda-profissional"
             }
         ]
     },
     {
-        identificador: "sintomas-associados",
-        pergunta: "Você está sentindo mais algum dos seguintes sintomas: falta de ar, dor no peito, ou fadiga?",
-        respostas: [
+        id: "sintomas-associados",
+        textoPergunta: "Você está sentindo mais algum dos seguintes sintomas: falta de ar, dor no peito, ou fadiga?",
+        opcoes: [
             {
-                respostaPossivel: "Sim",
-                redireciona: "ajuda-imediata",
+                resposta: "Sim",
+                redirecionaPara: "ajuda-imediata",
                 diagnostico: "Sintomas associados preocupantes"
             },
             {
-                respostaPossivel: "Não",
-                redireciona: "ajuda-profissional"
+                resposta: "Não",
+                redirecionaPara: "ajuda-profissional"
             },
             {
-                respostaPossivel: "Não sei",
-                redireciona: "ajuda-profissional"
+                resposta: "Não sei",
+                redirecionaPara: "ajuda-profissional"
             }
         ]
     },
     {
-        identificador: "ajuda-imediata",
-        pergunta: "Recomendamos que você procure atendimento médico imediatamente.",
-        respostas: [
+        id: "ajuda-imediata",
+        textoPergunta: "Recomendamos que você procure atendimento médico imediatamente.",
+        opcoes: [
             {
-                respostaPossivel: "Ok",
-                resposta: "Procure um pronto-socorro ou um médico."
+                resposta: "Ok",
+                mensagem: "Procure um pronto-socorro ou um médico."
             }
         ]
     },
     {
-        identificador: "ajuda-profissional",
-        pergunta: "É importante consultar um profissional de saúde para uma avaliação adequada.",
-        respostas: [
+        id: "ajuda-profissional",
+        textoPergunta: "É importante consultar um profissional de saúde para uma avaliação adequada.",
+        opcoes: [
             {
-                respostaPossivel: "Ok",
-                resposta: "Procure um médico para discutir seus sintomas."
+                resposta: "Ok",
+                mensagem: "Procure um médico para discutir seus sintomas."
             }
         ]
     }
 ];
 
-diagnostico = [];
+let diagnostico = [];
 const readline = require('readline');
 const respostaInterface = readline.createInterface({
     input: process.stdin,
@@ -171,36 +171,31 @@ Object.prototype.hasOwnProperty = function (property) {
 };
 
 async function processNode(node) {
-    let opcoes = "\n";
-    for (let index = 0; index < node.respostas.length; index++) {
-        opcoes += index + " - " + node.respostas[index].respostaPossivel + "\n";
+    let opcoesTexto = "\n";
+    for (let index = 0; index < node.opcoes.length; index++) {
+        opcoesTexto += index + " - " + node.opcoes[index].resposta + "\n";
     }
-    let respostaEscolhida = await fazPergunta(node.pergunta + opcoes);
-    if (node.respostas[respostaEscolhida].hasOwnProperty('diagnostico')) {
-        diagnostico.push(node.respostas[respostaEscolhida].diagnostico);
+    let respostaEscolhida = await fazPergunta(node.textoPergunta + opcoesTexto);
+    if (node.opcoes[respostaEscolhida].hasOwnProperty('diagnostico')) {
+        diagnostico.push(node.opcoes[respostaEscolhida].diagnostico);
     }
-    if (node.respostas[respostaEscolhida].hasOwnProperty('redireciona')) {
-        let identificador = node.respostas[respostaEscolhida].redireciona;
-        if (identificador === 'fim') {
-            return false;
-        }
-        var otherNode = perguntas.find(item => item.identificador == identificador);
+    if (node.opcoes[respostaEscolhida].hasOwnProperty('redirecionaPara')) {
+        let identificador = node.opcoes[respostaEscolhida].redirecionaPara;
+        let otherNode = perguntas.find(item => item.id === identificador);
         return await processNode(otherNode);
     }
-    if (node.respostas[respostaEscolhida].hasOwnProperty('resposta')) {
-        console.log(node.respostas[respostaEscolhida].resposta);
-        return false;
+    if (node.opcoes[respostaEscolhida].hasOwnProperty('mensagem')) {
+        console.log(node.opcoes[respostaEscolhida].mensagem);
+        return false; // encerra
     }
 }
 
 async function iniciarPerguntas(perguntas) {
-    resposta = await processNode(perguntas[0]);
+    await processNode(perguntas[0]);
     respostaInterface.close();
     if (diagnostico.length > 0) {
         console.log("Problemas identificados:");
-        for (let index = 0; index < diagnostico.length; index++) {
-            console.log(diagnostico[index] + "\n");
-        }
+        diagnostico.forEach(item => console.log(item + "\n"));
     } else {
         console.log("Nenhum problema foi identificado.");
     }
